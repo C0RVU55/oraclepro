@@ -13,8 +13,8 @@ public class PhoneDao {
 	// 필드
 	private String driver = "oracle.jdbc.driver.OracleDriver";
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private String id = "webdb";
-	private String pw = "webdb";
+	private String id = "phonedb"; // webdb아니고 phonedb
+	private String pw = "phonedb";
 
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -28,12 +28,8 @@ public class PhoneDao {
 
 	// 화면 출력
 	public void view() {
-		System.out.println("******************************************");
-		System.out.println("*          전화번호 관리 프로그램        *");
-		System.out.println("******************************************");
-
 		System.out.println("");
-		System.out.println("1.리스트  2.등록  3.삭제  4.검색  5.종료");
+		System.out.println("1.리스트  2.등록  3.수정  4.삭제  5.검색  6.종료");
 		System.out.println("------------------------------------------");
 		System.out.print(">메뉴번호: ");
 	}
@@ -132,6 +128,7 @@ public class PhoneDao {
 			count = pstmt.executeUpdate();
 
 			// 4.결과처리
+			System.out.println("[" + count + "건 등록되었습니다.]");
 
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
@@ -166,6 +163,7 @@ public class PhoneDao {
 			count = pstmt.executeUpdate();
 
 			// 4.결과처리
+			System.out.println("[" + count + "건 수정되었습니다.]");
 
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
@@ -194,6 +192,7 @@ public class PhoneDao {
 			count = pstmt.executeUpdate();
 
 			// 4.결과처리
+			System.out.println("[" + count + "건 삭제되었습니다.]");
 
 		} catch (SQLException e) {
 			System.out.println("error:" + e);

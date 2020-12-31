@@ -11,9 +11,14 @@ public class PhoneVo {
 	// 생성자
 	public PhoneVo() {
 	}
-
+	
+	public PhoneVo(String name, String hp, String company) {
+		this.name = name;
+		this.hp = hp;
+		this.company = company;
+	}
+	
 	public PhoneVo(int personId, String name, String hp, String company) {
-		super();
 		this.personId = personId;
 		this.name = name;
 		this.hp = hp;
